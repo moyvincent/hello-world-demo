@@ -34,7 +34,8 @@ jobs:
       - checkout
       - run:
           name: "Print World"
-          command: "echo Hello World $test_name_var"
+          command: |
+            echo Hello World $MY_ENV_VAR
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
