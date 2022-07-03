@@ -16,7 +16,7 @@ jobs:
       - checkout
       - run:
           name: "Say error"
-          command: "exit 1"
+          command: "echo Hello World"
 
   save_hello_world_output:
     docker:
@@ -47,6 +47,9 @@ jobs:
       - image: circleci/node:13.8.0
     steps:
       - checkout
+      - run:
+          name: "Say error"
+          command: "exit 1"
       - run:
           name: "Print Error"
           command: "echo Hello Error $MY_ENV_VAR"
