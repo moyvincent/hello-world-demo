@@ -15,8 +15,8 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Say hello"
-          command: "echo Hello, World!"
+          name: "Say error"
+          command: "exit 1"
 
   save_hello_world_output:
     docker:
@@ -48,9 +48,10 @@ jobs:
     steps:
       - checkout
       - run:
-          name: "Print World"
+          name: "Print Error"
           command: |
-            echo Hello World $MY_ENV_VAR
+            echo Hello Error $MY_ENV_VAR
+          when: on_fail
 
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
