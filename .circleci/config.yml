@@ -49,8 +49,7 @@ jobs:
       - checkout
       - run:
           name: "Print Error"
-          command: |
-            echo Hello Error $MY_ENV_VAR
+          command: "echo Hello Error $MY_ENV_VAR"
           when: on_fail
 
 # Invoke jobs via workflows
