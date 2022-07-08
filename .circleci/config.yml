@@ -12,7 +12,6 @@ orbs:
 commands:
   # Exercise - Rollback
   destroy_environment:
-    executor: aws-cli/default
     steps:
       - checkout
       - aws-cli/setup:
