@@ -12,7 +12,11 @@ orbs:
 commands:
   # Exercise - Rollback
   destroy_environment:
+    executor: aws-cli/default
     steps:
+      - checkout
+      - aws-cli/setup:
+          profile-name: vino
       - run:
           name: Destroy environment
           # ${CIRCLE_WORKFLOW_ID} is a Built-in environment variable 
